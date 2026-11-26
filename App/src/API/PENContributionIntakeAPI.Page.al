@@ -37,6 +37,16 @@ page 50114 "PEN Contribution Intake API"
                 field(payload; PayloadText)
                 {
                     Caption = 'payload', Locked = true;
+
+                    trigger OnValidate()
+                    var
+                        ContributionIntake: Codeunit "PEN Contribution Intake";
+                    begin
+                        // The intake runs here, not in OnInsertRecord: payload is a page variable, so a POST
+                        // that sets only payload leaves Rec unchanged and the platform skips the insert
+                        // (and OnInsertRecord) entirely. Filling Rec here makes the platform insert it.
+                        ContributionIntake.ReceiveFromApi(Rec, PayloadText);
+                    end;
                 }
                 field(messageId; Rec."Message ID")
                 {
@@ -63,12 +73,13 @@ page 50114 "PEN Contribution Intake API"
     }
 
     trigger OnInsertRecord(BelowxRec: Boolean): Boolean
-    var
-        ContributionIntake: Codeunit "PEN Contribution Intake";
     begin
-        ContributionIntake.ReceiveFromApi(Rec, PayloadText);
+        if Rec."Batch No." = '' then
+            Error(PayloadRequiredErr);
+        exit(true);
     end;
 
     var
+        PayloadRequiredErr: Label 'The request must include "payload": the contribution batch JSON as a string.';
         PayloadText: Text;
 }

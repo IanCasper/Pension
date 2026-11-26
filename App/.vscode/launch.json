@@ -18,6 +18,21 @@
             "enableSqlInformationDebugger": true,
             "tenant": "default",
             "usePublicURLFromServer": true
+        },
+        {
+            "name": "Attach: next web service call (BC280T)",
+            "request": "attach",
+            "type": "al",
+            "environmentType": "OnPrem",
+            "server": "http://localhost:8080/BC280T/",
+            "serverInstance": "BC280T",
+            "port": 7949,
+            "authentication": "Windows",
+            "tenant": "default",
+            "breakOnNext": "WebServiceClient",
+            "breakOnError": "All",
+            "enableLongRunningSqlStatements": true,
+            "enableSqlInformationDebugger": true
         }
     ]
 }

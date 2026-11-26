@@ -8,3 +8,5 @@ rad.json
 *.g.xlf
 TestResults*.xml
 .altestrunner/codecoverage.json
+.postman/resources.yaml
+/postman
