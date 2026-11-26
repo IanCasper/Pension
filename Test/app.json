@@ -1,0 +1,40 @@
+{
+  "id": "7c1e2b8a-3f4d-4b6e-9a51-2d8c0f6e4a13",
+  "name": "Zamara Pension Contributions Tests",
+  "publisher": "Zamara",
+  "version": "1.0.0.0",
+  "brief": "Automated tests for Zamara Pension Contributions.",
+  "description": "Test codeunits for intake, background processing, posting, penalties and receipting. Each test creates its own data.",
+  "privacyStatement": "",
+  "EULA": "",
+  "help": "",
+  "url": "",
+  "logo": "",
+  "dependencies": [
+    {
+      "id": "51dd20a3-c5cc-4d8a-b304-ee511a387971",
+      "name": "Zamara Pension Contributions",
+      "publisher": "Zamara",
+      "version": "1.0.0.0"
+    }
+  ],
+  "screenshots": [],
+  "platform": "1.0.0.0",
+  "application": "28.0.0.0",
+  "idRanges": [
+    {
+      "from": 50140,
+      "to": 50149
+    }
+  ],
+  "resourceExposurePolicy": {
+    "allowDebugging": true,
+    "allowDownloadingSource": true,
+    "includeSourceInSymbolFile": true
+  },
+  "runtime": "17.0",
+  "target": "Cloud",
+  "features": [
+    "NoImplicitWith"
+  ]
+}

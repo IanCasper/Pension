@@ -1,0 +1,10 @@
+.alcache/
+.alpackages/
+.snapshots/
+.vscode/.alcache/
+*.app
+!Deliverables/*.app
+rad.json
+*.g.xlf
+TestResults*.xml
+.altestrunner/codecoverage.json
